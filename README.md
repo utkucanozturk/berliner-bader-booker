@@ -10,7 +10,7 @@ It can be used for the swimming halls listed in [this website](https://pretix.eu
 
 4 input values are required for program to run:
 
-* Swimming hall id. It can be found using [this website}(https://pretix.eu/Baeder/). When you clicked on the swimming hall you are interested in, you will be redirected to the URL for that pool. If you check the URL address you will see that it ends with a number such as `49` for Stadtbad Neukölln. That number should be inputted as hall id in the application.
+* Swimming hall id. It can be found using [this website](https://pretix.eu/Baeder/). When you clicked on the swimming hall you are interested in, you will be redirected to the URL for that pool. If you check the URL address you will see that it ends with a number such as `49` for [Stadtbad Neukölln](https://pretix.eu/Baeder/49/). That number should be inputted as hall id in the application.
 
 * Date you want to make a search. It should be in the format of `YYYY-MM-DD`.
 
