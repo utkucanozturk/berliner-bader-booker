@@ -15,7 +15,7 @@ URL = base_url + str(baeder_id) + "/"
 
 
 for i in range(search_len):
-    page = requests.get(URL, verify='C:/Users/ucn/Desktop/pretix-eu-chain.pem')
+    page = requests.get(URL, verify='./pretix-eu-chain.pem')
 
     soup = BeautifulSoup(page.content, "html.parser")
 
@@ -32,18 +32,16 @@ for i in range(search_len):
     if time_event.find('a', 'event over'):
         print('This event is over! Please enter another date/time.')
         break
-    elif (time_event.find('a', 'event soldout')) or (time_event.find('a', 'event soon')) or (time_event.find('a', 'event reserved')):
-        print('Not available!')
-    else:
+    elif (time_event.find('a', 'event available')):
         print('Found one, hurry!')
         beep(sound='success')
         break
-    
-    # wait for 1 minute
-    print("Let's wait one minute and try again!")
+    else:
+    #elif (time_event.find('a', 'event soldout')) or (time_event.find('a', 'event soon')) or (time_event.find('a', 'event reserved')) or (time_event.find('a', 'event soon')):
+        print('Not available!')
     
     if i == search_len -1:
         print("Search finished! We couldn't find any empty slots during the search period. You can try to search longer.")
         break
 
-    time.sleep(60)
+    time.sleep(40)
